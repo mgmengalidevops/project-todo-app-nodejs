@@ -1,0 +1,48 @@
+[
+    {
+        "Architecture": "amd64",
+        "Config": {
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "ExposedPorts": {
+                "3000/tcp": {}
+            },
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Created": "2025-11-17T15:00:05.639148447Z",
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/b68af08c36349991d37f1c81bb8a9d533f53caccb56c1e6ffbebbdd5e7378a08/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a0b2e23fbe6f8e69625a44572367f5e8e7dd5274c206c2f97ad17c28fac514e0/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a0b2e23fbe6f8e69625a44572367f5e8e7dd5274c206c2f97ad17c28fac514e0/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a0b2e23fbe6f8e69625a44572367f5e8e7dd5274c206c2f97ad17c28fac514e0/work"
+            },
+            "Name": "overlay2"
+        },
+        "Id": "sha256:a3f98df195d06b1162397a751656d1941bf0f0dfa522a0ea53f36e45d3624343",
+        "Metadata": {
+            "LastTagTime": "2025-11-17T12:00:07.532731279-03:00"
+        },
+        "Os": "linux",
+        "Parent": "sha256:c3a134f2ace4f6d480733efcfef27c60ea8ed48be1cd36f2c17ec0729775b2c8",
+        "RepoDigests": [],
+        "RepoTags": [
+            "nodetodoapp:latest"
+        ],
+        "RootFS": {
+            "Layers": [
+                "sha256:e8bce0aabd687e9ee90e0bada33884f40b277196f72aac9934357472863a80ae",
+                "sha256:9e66d122286d5c5ad01bf11b8f3f9984f1a56b95d8308d6c958f5e7d4cf451c2"
+            ],
+            "Type": "layers"
+        },
+        "Size": 477022655
+    }
+]

@@ -32,5 +32,63 @@ docker container cp . app:/app
 # Navigate to app directory and start
 cd app
 npm install
-node app.js
+node index.js
+```
+
+## Using `docker commit`
+
+```bash
+# Create and run an Ubuntu container interactively
+docker container run -p 8080:3000 --name app -it ubuntu /bin/bash
+
+# Inside the container, set up the environment
+export DEBIAN_FRONTEND=noninteractive
+apt update
+apt-get install -y curl
+
+# Install Node.js 20.x
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt-get install -y nodejs
+
+# Verify the installation
+node -v
+
+# Exit the container
+exit
+```
+
+```bash
+# Copy the project files to the container
+docker container cp . app:/app
+```
+
+```bash
+# Access the container again to install dependencies
+docker start app
+docker exec -it app /bin/bash
+
+# Navigate to the app directory and install dependencies
+cd app
+npm install
+node index.js
+
+# Exit the container
+exit
+```
+
+```bash
+# Create an image from the modified container
+docker commit app nodetodoapp
+
+# List the images to verify the new image
+docker image ls
+
+# Run a new container from the created image
+docker container run -d -p 8080:3000 --name todoapp nodetodoapp node /app/index.js
+
+# Check the image history
+docker image history nodetodoapp
+
+# Inspect the image
+docker image inspect nodetodoapp
 ```

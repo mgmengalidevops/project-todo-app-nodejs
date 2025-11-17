@@ -1,0 +1,18 @@
+{
+  "name": "todo-ssr-app",
+  "version": "1.0.0",
+  "description": "To-Do List SSR com Node.js e EJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "type": "module"
+}

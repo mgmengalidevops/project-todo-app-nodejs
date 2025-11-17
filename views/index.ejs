@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas SSR</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas (SSR)</h1>
+        
+        <form class="add-form" action="/add" method="POST">
+            <input type="text" name="task" placeholder="Adicionar nova tarefa..." required>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <ul class="todo-list">
+            <% if (todos.length === 0) { %>
+                <li class="empty-message">Nenhuma tarefa encontrada. 🎉</li>
+            <% } %>
+
+            <% todos.forEach(todo => { %>
+                <li class="todo-item <%= todo.completed ? 'completed' : '' %>">
+                    <span class="task-text"><%= todo.task %></span>
+                    <div class="actions">
+                        <form action="/toggle/<%= todo.id %>" method="POST" style="display:inline;">
+                            <button type="submit" class="toggle-btn">
+                                <%= todo.completed ? 'Desfazer' : 'Concluir' %>
+                            </button>
+                        </form>
+                        <form action="/delete/<%= todo.id %>" method="POST" style="display:inline;">
+                            <button type="submit" class="delete-btn">Excluir</button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>

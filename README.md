@@ -92,3 +92,22 @@ docker image history nodetodoapp
 # Inspect the image
 docker image inspect nodetodoapp
 ```
+
+## Using Dockerfile
+
+```bash
+# Build the image using Dockerfile
+docker build -t nodetodoapp .
+
+# Run a container from the built image
+docker container run -d --name app -p 8080:3000 nodetodoapp
+
+# List running containers
+docker container ls
+
+# Check the image history
+docker image history nodetodoapp
+
+# Inspect the image and save to file
+docker image inspect nodetodoapp > nodetodoapp-image-inspect-docerfile.json
+```

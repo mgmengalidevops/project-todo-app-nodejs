@@ -111,3 +111,19 @@ docker image history nodetodoapp
 # Inspect the image and save to file
 docker image inspect nodetodoapp > nodetodoapp-image-inspect-docerfile.json
 ```
+
+## Using Docker Registry
+
+```bash
+# Login to Docker Hub
+docker login
+
+# Tag the image for Docker Hub
+docker tag nodetodoapp:latest mgmengalidevops/nodetodoapp:latest
+
+# Push the image to Docker Hub
+docker push mgmengalidevops/nodetodoapp:latest
+
+# Pull the image from Docker Hub (to use on another machine)
+docker pull mgmengalidevops/nodetodoapp:latest
+``` 

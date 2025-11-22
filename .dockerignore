@@ -1,0 +1,68 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Testing
+coverage
+*.test.js
+__tests__
+jest.config.js
+.nyc_output
+
+# Development files
+.git
+.gitignore
+.vscode
+.idea
+.editorconfig
+.eslintrc*
+.prettierrc*
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+.circleci
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+dist
+build
+tmp
+temp
+
+# Logs
+logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Docker files (no need to copy these into the image)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# JSON inspection files (project specific)
+*-inspect-*.json
+
+# files
+nodetodoapp-image-inspect-docerfile.json
+notodoapp-image-inspect-docker-commit.json
